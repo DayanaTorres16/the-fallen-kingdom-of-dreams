@@ -1,0 +1,127 @@
+[gd_scene load_steps=11 format=3 uid="uid://cfoxq5ed8oumt"]
+
+[ext_resource type="Script" uid="uid://beiyffl11rlme" path="res://Scripts/main_menu.gd" id="1_16hvj"]
+[ext_resource type="Texture2D" uid="uid://dwk57kb5joadb" path="res://Assets/Background/Background1.png" id="2_vr1f0"]
+[ext_resource type="Texture2D" uid="uid://d3jk5ybtv5x0h" path="res://Assets/Title/Title.png" id="3_t1dhk"]
+[ext_resource type="Texture2D" uid="uid://bm71u3vtwk2n6" path="res://Assets/Button/Button_Normal.png" id="4_5egv6"]
+[ext_resource type="Texture2D" uid="uid://tsign6hhoocr" path="res://Assets/Button/Button_Pressed.png" id="5_vtepg"]
+[ext_resource type="Texture2D" uid="uid://byyjnarmu85d" path="res://Assets/Button/Button_Hover.png" id="6_8dnnj"]
+[ext_resource type="Script" uid="uid://b3373npehhsti" path="res://Scripts/texture_button_new_game.gd" id="7_m3bi6"]
+[ext_resource type="Script" uid="uid://bk83u1aeonckm" path="res://Scripts/texture_button_load_game.gd" id="8_wyh8j"]
+[ext_resource type="Script" uid="uid://c3wk0ri6b12i7" path="res://Scripts/texture_button_options.gd" id="9_ujyyl"]
+[ext_resource type="Script" uid="uid://brw8ay5u2gib2" path="res://Scripts/texture_button_quit.gd" id="10_mkpwh"]
+
+[node name="Main_Menu" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_16hvj")
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 1157.0
+offset_bottom = 661.0
+texture = ExtResource("2_vr1f0")
+
+[node name="Title" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 54.0
+offset_right = 1246.0
+offset_bottom = 507.5
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_t1dhk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 435.0
+offset_top = 247.0
+offset_right = 895.0
+offset_bottom = 747.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+
+[node name="TextureButton_NewGame" type="TextureButton" parent="Control/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_5egv6")
+texture_pressed = ExtResource("5_vtepg")
+texture_hover = ExtResource("6_8dnnj")
+script = ExtResource("7_m3bi6")
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/TextureButton_NewGame"]
+layout_mode = 0
+offset_left = 157.14285
+offset_top = 38.571426
+offset_right = 285.71426
+offset_bottom = 74.28569
+theme_override_font_sizes/font_size = 34
+text = "New Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton_LoadGame" type="TextureButton" parent="Control/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_5egv6")
+texture_pressed = ExtResource("5_vtepg")
+texture_hover = ExtResource("6_8dnnj")
+script = ExtResource("8_wyh8j")
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/TextureButton_LoadGame"]
+layout_mode = 0
+offset_left = 157.14285
+offset_top = 38.571426
+offset_right = 285.71426
+offset_bottom = 74.28569
+theme_override_font_sizes/font_size = 34
+text = "Load Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton_Options" type="TextureButton" parent="Control/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_5egv6")
+texture_pressed = ExtResource("5_vtepg")
+texture_hover = ExtResource("6_8dnnj")
+script = ExtResource("9_ujyyl")
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/TextureButton_Options"]
+layout_mode = 0
+offset_left = 175.71426
+offset_top = 38.571426
+offset_right = 305.71426
+offset_bottom = 85.57143
+theme_override_font_sizes/font_size = 34
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton_Quit" type="TextureButton" parent="Control/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_5egv6")
+texture_pressed = ExtResource("5_vtepg")
+texture_hover = ExtResource("6_8dnnj")
+script = ExtResource("10_mkpwh")
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/TextureButton_Quit"]
+layout_mode = 0
+offset_left = 157.14285
+offset_top = 38.571426
+offset_right = 285.71426
+offset_bottom = 74.28569
+theme_override_font_sizes/font_size = 34
+text = "Quit Game
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Control/VBoxContainer/TextureButton_NewGame" to="Control/VBoxContainer/TextureButton_NewGame" method="_on_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/TextureButton_LoadGame" to="Control/VBoxContainer/TextureButton_LoadGame" method="_on_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/TextureButton_Options" to="Control/VBoxContainer/TextureButton_Options" method="_on_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/TextureButton_Quit" to="Control/VBoxContainer/TextureButton_Quit" method="_on_pressed"]
