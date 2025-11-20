@@ -6,7 +6,6 @@ extends Control
 @onready var btn_quit = $VBoxContainer/TextureButton_Quit
 
 func _ready():
-	# Conectar las señales de los botones
 	btn_new.pressed.connect(_on_nueva_partida_pressed)
 	btn_load.pressed.connect(_on_cargar_partida_pressed)
 	btn_options.pressed.connect(_on_opciones_pressed)
