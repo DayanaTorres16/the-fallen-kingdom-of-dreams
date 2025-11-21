@@ -57,10 +57,10 @@ script = ExtResource("7_m3bi6")
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/TextureButton_NewGame"]
 layout_mode = 0
-offset_left = 157.14285
-offset_top = 38.571426
-offset_right = 285.71426
-offset_bottom = 74.28569
+offset_left = 157.143
+offset_top = 38.5714
+offset_right = 285.714
+offset_bottom = 74.2857
 theme_override_font_sizes/font_size = 34
 text = "New Game"
 horizontal_alignment = 1
@@ -75,10 +75,10 @@ script = ExtResource("8_wyh8j")
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/TextureButton_LoadGame"]
 layout_mode = 0
-offset_left = 157.14285
-offset_top = 38.571426
-offset_right = 285.71426
-offset_bottom = 74.28569
+offset_left = 157.143
+offset_top = 38.5714
+offset_right = 285.714
+offset_bottom = 74.2857
 theme_override_font_sizes/font_size = 34
 text = "Load Game"
 horizontal_alignment = 1
@@ -93,10 +93,10 @@ script = ExtResource("9_ujyyl")
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/TextureButton_Options"]
 layout_mode = 0
-offset_left = 175.71426
-offset_top = 38.571426
-offset_right = 305.71426
-offset_bottom = 85.57143
+offset_left = 175.714
+offset_top = 38.5714
+offset_right = 305.714
+offset_bottom = 85.5714
 theme_override_font_sizes/font_size = 34
 text = "Options"
 horizontal_alignment = 1
@@ -111,10 +111,10 @@ script = ExtResource("10_mkpwh")
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/TextureButton_Quit"]
 layout_mode = 0
-offset_left = 157.14285
-offset_top = 38.571426
-offset_right = 285.71426
-offset_bottom = 74.28569
+offset_left = 157.143
+offset_top = 38.5714
+offset_right = 285.714
+offset_bottom = 74.2857
 theme_override_font_sizes/font_size = 34
 text = "Quit Game
 "
