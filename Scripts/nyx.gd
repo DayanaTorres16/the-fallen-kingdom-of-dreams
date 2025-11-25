@@ -3,12 +3,13 @@ extends CharacterBody2D
 signal doble_salto_ejecutado 
 
 const SPEED = 350.0 
-const JUMP_VELOCITY = -450.0  
-const DOUBLE_JUMP_VELOCITY = -350.0 
+const JUMP_VELOCITY = -365.0        
+const DOUBLE_JUMP_VELOCITY = -290.0 
 
 @onready var sprite_2d = $AnimatedSprite2D 
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 1.2
+
 var jump_count = 0
 const MAX_JUMPS = 2
 
