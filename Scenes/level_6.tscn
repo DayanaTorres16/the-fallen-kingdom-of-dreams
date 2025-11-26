@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dalbixagv473m"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5ioax"]
+load_path = "res://.godot/imported/Background 3.png-ce0d4a0723bd36cd540d845353b4a727.ctex"
+
+[node name="Level_6" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1287.7778
+offset_bottom = 832.0
+scale = Vector2(0.9, 0.8)
+texture = SubResource("CompressedTexture2D_5ioax")
