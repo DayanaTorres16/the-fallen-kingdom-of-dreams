@@ -1,9 +1,14 @@
-[gd_scene format=3 uid="uid://dv33jdvdjqg1b"]
+[gd_scene load_steps=2 format=3 uid="uid://dv33jdvdjqg1b"]
+
+[sub_resource type="TileSet" id="TileSet_fhe3q"]
+physics_layer_0/collision_layer = 1
 
 [node name="Level_5" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1248.0
+offset_bottom = 832.0
+scale = Vector2(1, 0.8)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_fhe3q")
