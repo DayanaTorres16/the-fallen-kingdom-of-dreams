@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://dv33jdvdjqg1b"]
 
 [node name="Level_5" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]

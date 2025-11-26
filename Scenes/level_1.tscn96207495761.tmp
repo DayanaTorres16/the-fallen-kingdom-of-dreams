@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=4 uid="uid://dnw0aye84br0l"]
+[gd_scene load_steps=16 format=4 uid="uid://dnw0aye84br0l"]
 
 [ext_resource type="Script" uid="uid://bubiikc7346yi" path="res://Scripts/level_1.gd" id="1_6r07y"]
 [ext_resource type="Texture2D" uid="uid://dn6srujhvsmbq" path="res://Assets/Background/Level1.png" id="1_8ffim"]
 [ext_resource type="Texture2D" uid="uid://ce0ilnld1f66f" path="res://Assets/Title/Tile Set 1.png" id="2_xfk5q"]
-[ext_resource type="Script" uid="uid://uu6ffsqsa2hy" path="res://Scripts/ladder.gd" id="7_chwpn"]
 [ext_resource type="PackedScene" uid="uid://by78ltmi6io50" path="res://Scenes/nyx_2.tscn" id="8_wrinw"]
 [ext_resource type="Texture2D" uid="uid://b7xbrvpp18573" path="res://Assets/Items/ladder.png" id="9_wrinw"]
 [ext_resource type="Texture2D" uid="uid://c0vtu6uhrga6i" path="res://Assets/Items/Key.png" id="11_6ioyp"]
@@ -243,7 +242,6 @@ scale = Vector2(0.15845, 0.154938)
 texture = ExtResource("13_8i23i")
 
 [node name="Ladder" type="Area2D" parent="."]
-script = ExtResource("7_chwpn")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ladder"]
 position = Vector2(111.875, 510.25)
@@ -270,6 +268,3 @@ scale = Vector2(0.25679, 0.30541)
 shape = SubResource("RectangleShape2D_0wb0u")
 
 [connection signal="body_entered" from="Key" to="." method="_on_key_body_entered"]
-[connection signal="body_entered" from="Ladder" to="Ladder" method="_on_body_entered"]
-[connection signal="body_exited" from="Ladder" to="Ladder" method="_on_body_exited"]
-[connection signal="body_entered" from="Spikes" to="Nyx2" method="_on_spikes_body_entered"]
