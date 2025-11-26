@@ -24,7 +24,7 @@ func _ready():
 	double_jump_panel.modulate = normal_modulate
 	movement_panel.modulate = normal_modulate
 	
-	arrow_area.visible = false  # flecha oculta al inicio
+	arrow_area.visible = false 
 	
 	if player.has_signal("doble_salto_ejecutado"):
 		player.doble_salto_ejecutado.connect(_on_double_jump)
