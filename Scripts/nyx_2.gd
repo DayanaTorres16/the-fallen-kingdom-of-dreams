@@ -92,3 +92,8 @@ func exit_ladder():
 	can_climb = false
 	is_climbing = false
 	print("No puede escalar")
+
+
+func _on_water_body_entered(body: Node2D) -> void:
+	if body == self:
+		die()
