@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://d15yd01cueyix"]
+
+[ext_resource type="Script" uid="uid://b0kbkqd8wlhl3" path="res://Scripts/collectible_gem.gd" id="1_2ynd3"]
+[ext_resource type="Texture2D" uid="uid://x0vxhv5rwhxm" path="res://Assets/Items/Collectibles/Flying_stone.png" id="1_qiqq5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ynd3"]
+atlas = ExtResource("1_qiqq5")
+region = Rect2(0, 0, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3gdb"]
+atlas = ExtResource("1_qiqq5")
+region = Rect2(160, 0, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fg8x"]
+atlas = ExtResource("1_qiqq5")
+region = Rect2(320, 0, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bok4m"]
+atlas = ExtResource("1_qiqq5")
+region = Rect2(480, 0, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do17p"]
+atlas = ExtResource("1_qiqq5")
+region = Rect2(640, 0, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0p67x"]
+atlas = ExtResource("1_qiqq5")
+region = Rect2(800, 0, 160, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_skctk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ynd3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3gdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fg8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bok4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do17p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0p67x")
+}],
+"loop": true,
+"name": &"GemCollectible",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ilye"]
+
+[node name="CollectibleGem" type="Area2D"]
+script = ExtResource("1_2ynd3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(203.25, 412.75)
+scale = Vector2(0.33437502, 0.35546854)
+sprite_frames = SubResource("SpriteFrames_skctk")
+animation = &"GemCollectible"
+frame_progress = 0.1251926
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(201, 410)
+shape = SubResource("CircleShape2D_1ilye")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
