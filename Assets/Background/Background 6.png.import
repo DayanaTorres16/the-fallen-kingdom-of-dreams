@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4up142p0b8j2"
-path="res://.godot/imported/env_rock.png-307e1002479cc1bfb357151dc5370418.ctex"
+uid="uid://crrhguiwrnsin"
+path="res://.godot/imported/Background 6.png-6008efa8b7ba4e915678f83712d7d7be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tile/env_rock.png"
-dest_files=["res://.godot/imported/env_rock.png-307e1002479cc1bfb357151dc5370418.ctex"]
+source_file="res://Assets/Background/Background 6.png"
+dest_files=["res://.godot/imported/Background 6.png-6008efa8b7ba4e915678f83712d7d7be.ctex"]
 
 [params]
 
