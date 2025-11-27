@@ -1,0 +1,112 @@
+[gd_scene load_steps=17 format=3 uid="uid://c4tflirirv856"]
+
+[ext_resource type="Script" uid="uid://d2cfme88ruq3b" path="res://Scripts/fairy_collectible.gd" id="1_xayww"]
+[ext_resource type="Texture2D" uid="uid://dunt5jwnmjycl" path="res://Assets/Items/Collectibles/Fairys.png" id="2_dm53u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od75w"]
+atlas = ExtResource("2_dm53u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvjnh"]
+atlas = ExtResource("2_dm53u")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1w2b"]
+atlas = ExtResource("2_dm53u")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ysct"]
+atlas = ExtResource("2_dm53u")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4erhi"]
+atlas = ExtResource("2_dm53u")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k33g"]
+atlas = ExtResource("2_dm53u")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjhxf"]
+atlas = ExtResource("2_dm53u")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja06o"]
+atlas = ExtResource("2_dm53u")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tildx"]
+atlas = ExtResource("2_dm53u")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4en2q"]
+atlas = ExtResource("2_dm53u")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3m15"]
+atlas = ExtResource("2_dm53u")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc4bi"]
+atlas = ExtResource("2_dm53u")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t3pnl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_od75w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvjnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1w2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ysct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4erhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7k33g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjhxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ja06o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tildx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4en2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3m15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dc4bi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oh4no"]
+
+[node name="FairyCollectible" type="Area2D"]
+script = ExtResource("1_xayww")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(462, 168)
+sprite_frames = SubResource("SpriteFrames_t3pnl")
+frame_progress = 0.87678087
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(463, 168)
+shape = SubResource("CircleShape2D_oh4no")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

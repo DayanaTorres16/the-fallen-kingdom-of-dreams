@@ -8,6 +8,7 @@ const DOUBLE_JUMP_VELOCITY = -290.0
 var CLIMB_SPEED = 120.0
 
 @onready var sprite_2d = $AnimatedSprite2D
+@onready var camera = $Camera2D   
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 1.2
 var jump_count = 0
@@ -74,8 +75,22 @@ func die():
 	is_dead = true
 	velocity = Vector2.ZERO
 	sprite_2d.animation = "Dead"
+	camera_shake(8.0, 0.4)  
 	await get_tree().create_timer(1.0).timeout
 	get_tree().reload_current_scene()
+
+func camera_shake(intensity: float = 10.0, duration: float = 0.3):
+	var original_offset = camera.offset
+	var time_passed = 0.0
+	
+	while time_passed < duration:
+		var random_x = randf_range(-intensity, intensity)
+		var random_y = randf_range(-intensity, intensity)
+		camera.offset = Vector2(random_x, random_y)
+		await get_tree().process_frame
+		time_passed += get_process_delta_time()
+	
+	camera.offset = original_offset
 
 func _on_spikes_body_entered(body: Node2D) -> void:
 	if body == self:
@@ -92,7 +107,6 @@ func exit_ladder():
 	can_climb = false
 	is_climbing = false
 	print("No puede escalar")
-
 
 func _on_water_body_entered(body: Node2D) -> void:
 	if body == self:
