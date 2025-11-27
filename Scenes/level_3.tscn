@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://ddsigsrwi4r6c"]
 
 [ext_resource type="Texture2D" uid="uid://dn6srujhvsmbq" path="res://Assets/Background/Level1.png" id="1_g5cw1"]
-[ext_resource type="Texture2D" uid="uid://ce0ilnld1f66f" path="res://Assets/Title/Tile Set 1.png" id="2_76ybr"]
+[ext_resource type="Texture2D" uid="uid://ce0ilnld1f66f" path="res://Assets/Tile/Tile Set 1.png" id="2_76ybr"]
 [ext_resource type="PackedScene" uid="uid://by78ltmi6io50" path="res://Scenes/nyx_2.tscn" id="3_76ybr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s8nj6"]
@@ -163,6 +163,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_s8nj6")
 
 [node name="Level_3" type="Node2D"]
+position = Vector2(1, 0)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
