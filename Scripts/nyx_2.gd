@@ -21,6 +21,12 @@ func _physics_process(delta):
 	if is_dead:
 		return
 	
+	if Input.is_action_just_pressed("Guardar"):
+		SinglentonGameManager.saveGame()
+	
+	if Input.is_action_just_pressed("Cargar"):
+		SinglentonGameManager.loadGame()
+	
 	if can_climb and (Input.is_action_pressed("ToClimb") or Input.is_action_pressed("Down")):
 		is_climbing = true
 	elif not can_climb:
@@ -109,5 +115,9 @@ func exit_ladder():
 	print("No puede escalar")
 
 func _on_water_body_entered(body: Node2D) -> void:
+	if body == self:
+		die()
+
+func _on_void_body_entered(body: Node2D) -> void:
 	if body == self:
 		die()

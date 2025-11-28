@@ -1,0 +1,95 @@
+[gd_scene load_steps=13 format=3 uid="uid://11t7d0k7untr"]
+
+[ext_resource type="Script" uid="uid://1o3q6rd1rl8k" path="res://Scripts/enemy_1.gd" id="1_0a874"]
+[ext_resource type="Texture2D" uid="uid://dojjhmsjr8x4u" path="res://Assets/Enemy/Enemy1/enemy05_sheet.png" id="2_lssre"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlnc2"]
+atlas = ExtResource("2_lssre")
+region = Rect2(0, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmo6u"]
+atlas = ExtResource("2_lssre")
+region = Rect2(62, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arec4"]
+atlas = ExtResource("2_lssre")
+region = Rect2(124, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v73nf"]
+atlas = ExtResource("2_lssre")
+region = Rect2(186, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya6xy"]
+atlas = ExtResource("2_lssre")
+region = Rect2(248, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y27sj"]
+atlas = ExtResource("2_lssre")
+region = Rect2(310, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imqlt"]
+atlas = ExtResource("2_lssre")
+region = Rect2(372, 0, 62, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ybxfi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlnc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmo6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arec4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v73nf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya6xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y27sj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imqlt")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ikxr"]
+height = 52.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0a874"]
+height = 60.0
+
+[node name="Enemy1" type="CharacterBody2D"]
+script = ExtResource("1_0a874")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 28)
+sprite_frames = SubResource("SpriteFrames_ybxfi")
+animation = &"Walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 27)
+shape = SubResource("CapsuleShape2D_2ikxr")
+
+[node name="Right" type="RayCast2D" parent="."]
+position = Vector2(1, 45)
+target_position = Vector2(15, 0)
+
+[node name="Left" type="RayCast2D" parent="."]
+position = Vector2(0, 45)
+target_position = Vector2(-19, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, 30)
+shape = SubResource("CapsuleShape2D_0a874")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://dmshxw8ggvoiw"]
+
+[ext_resource type="Texture2D" uid="uid://x0vxhv5rwhxm" path="res://Assets/Items/Collectibles/Flying_stone.png" id="1_qdvrb"]
+[ext_resource type="AudioStream" uid="uid://d1k6fgoi68sqe" path="res://Audio/Background.mp3" id="2_nf4gj"]
+[ext_resource type="AudioStream" uid="uid://crtdfehtodxj3" path="res://Audio/Diamond.mp3" id="3_2246s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yhm2"]
+atlas = ExtResource("1_qdvrb")
+region = Rect2(0, 0, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjppf"]
+atlas = ExtResource("1_qdvrb")
+region = Rect2(160, 0, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yltlr"]
+atlas = ExtResource("1_qdvrb")
+region = Rect2(320, 0, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ssoq"]
+atlas = ExtResource("1_qdvrb")
+region = Rect2(480, 0, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imks0"]
+atlas = ExtResource("1_qdvrb")
+region = Rect2(640, 0, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlmop"]
+atlas = ExtResource("1_qdvrb")
+region = Rect2(800, 0, 160, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sda17"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yhm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjppf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yltlr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ssoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imks0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlmop")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 123.0
+offset_bottom = 33.0
+
+[node name="PointsLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 147.0
+offset_top = 1.0
+offset_right = 147.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.766399, 0.866253, 0.997272, 1)
+theme_override_font_sizes/font_size = 22
+text = " : 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(180, 23)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_sda17")
+frame_progress = 0.899162
+
+[node name="GameAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nf4gj")
+autoplay = true
+
+[node name="CoinsAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2246s")

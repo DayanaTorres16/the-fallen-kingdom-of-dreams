@@ -7,8 +7,6 @@ extends Control
 
 func _ready():
 	btn_new.pressed.connect(_on_nueva_partida_pressed)
-	btn_load.pressed.connect(_on_cargar_partida_pressed)
-	btn_options.pressed.connect(_on_opciones_pressed)
 	btn_quit.pressed.connect(_on_quit_pressed)
 
 func _on_nueva_partida_pressed():
