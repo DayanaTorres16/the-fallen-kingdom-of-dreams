@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://c0vtu6uhrga6i" path="res://Assets/Items/Key.png" id="11_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://d15yd01cueyix" path="res://Scenes/collectible_gem.tscn" id="11_af3po"]
 [ext_resource type="Script" uid="uid://b1jsrni4mwt6y" path="res://Scripts/door.gd" id="12_oovug"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="12_uy8f0"]
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://og2fig2bw8cv" path="res://Assets/Items/Door_Close.png" id="13_8i23i"]
 [ext_resource type="Script" uid="uid://cgu2gvucvj1yp" path="res://Scripts/trophy.gd" id="14_oovug"]
 [ext_resource type="Texture2D" uid="uid://bw5h2ouw60al" path="res://Assets/Items/Wide_trap-removebg-preview.png" id="15_8i23i"]
