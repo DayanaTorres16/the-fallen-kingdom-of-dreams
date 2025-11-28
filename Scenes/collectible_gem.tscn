@@ -61,10 +61,10 @@ script = ExtResource("1_2ynd3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(203.25, 412.75)
-scale = Vector2(0.33437502, 0.35546854)
+scale = Vector2(0.334375, 0.355469)
 sprite_frames = SubResource("SpriteFrames_skctk")
 animation = &"GemCollectible"
-frame_progress = 0.1251926
+frame_progress = 0.125193
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(201, 410)
